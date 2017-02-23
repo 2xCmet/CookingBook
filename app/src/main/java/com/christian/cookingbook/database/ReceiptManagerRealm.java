@@ -22,7 +22,7 @@ public class ReceiptManagerRealm implements ReceiptManager{
 
     @Override
     public List<Receipt> getReceipt(String name) {
-        Log.d("database", name.toString());
+        Log.d("database", name);
         RealmResults<Receipt> result = realm.where(Receipt.class)
                                         .equalTo("name", name)
                                         .findAll();

@@ -17,7 +17,6 @@ public class Receipt extends RealmObject {
     private String id;
     private String name, description, cookingTime, preparationTime, numberOfPots;
     private RealmList<Ingredients> ingredients;
-    private RealmList<Tag> tags;
     private RealmList<Category> category;
 
     public Receipt() {
