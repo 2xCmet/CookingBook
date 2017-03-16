@@ -15,7 +15,8 @@ public class Receipt extends RealmObject {
 
     @PrimaryKey
     private String id;
-    private String name, description, cookingTime, preparationTime, numberOfPots;
+    private String name, description;
+    int preparationTime, cookingTime, numberOfPots;
     private RealmList<Ingredients> ingredients;
     private RealmList<Category> category;
 
@@ -49,29 +50,38 @@ public class Receipt extends RealmObject {
         this.description = description;
     }
 
-    public String getCookingTime() {
+    public int getCookingTime() {
         return cookingTime;
     }
 
-    public void setCookingTime(String cookingTime) {
+    public void setCookingTime(int cookingTime) {
         this.cookingTime = cookingTime;
     }
 
-    public String getPreparationTime() {
+    public int getPreparationTime() {
         return preparationTime;
     }
 
-    public void setPreparationTime(String preparationTime) {
+    public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
 
-    public String getNumberOfPots() {
+    public int getNumberOfPots() {
         return numberOfPots;
     }
 
-    public void setNumberOfPots(String numberOfPots) {
+    public void setNumberOfPots(int numberOfPots) {
         this.numberOfPots = numberOfPots;
     }
+
+    public RealmList<Category> getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category.add(category);
+    }
+
 
 
 
