@@ -6,6 +6,8 @@ import com.christian.cookingbook.baseClass.Receipt;
 
 import java.util.List;
 
+import io.realm.RealmResults;
+
 /**
  * Created by Christian on 24.02.2017.
  */
@@ -16,22 +18,22 @@ public interface ReceiptManager {
     List<Receipt> getReceipt(Category category);
     List<Receipt> getReceipt(List<Ingredients> ingredients);
     List<Receipt> getReceipt(Integer numberOfPots);
-    List<Receipt> getReceipt(String preparationTime, String cookingTime);
-    List<Receipt> getReceipt();
-    List<Receipt> getRealmReceiptList();
+    List<Receipt> getReceipt(Integer preparationTime, Integer cookingTime);
+    List<Receipt> getReceipts();
+    RealmResults<Receipt> getRealmReceiptList();
     Receipt loadReceipt(String receiptId);
     Category getCategory(String categoryId);
     Category getCategoryByName(String name);
     List<Category> loadAllCategories();
 
     boolean deleteCategory(String categoryId);
-    boolean deleteEvent(String eventId);
+    boolean deleteReceipt(String eventId);
 
-    void writeReceipt(Receipt receipt);
-    void updateReceipt(Receipt receipt);
+    void writeReceipt(final Receipt receipt);
+    void updateReceipt(final Receipt receipt, final String receiptId);
 
-    void updateCategoryOfReceipt(Receipt receipt, Category category);
-    void writeCategory(Category category);
+    void updateCategoryOfReceipt(final Receipt receipt, final Category category);
+    void writeCategory(final Category category);
 
     void open();
 
